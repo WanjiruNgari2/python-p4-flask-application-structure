@@ -3,3 +3,17 @@
 from flask import Flask
 
 app = Flask(__name__)
+
+# append to server/app.py
+
+@app.route('/')
+def index():
+    return '<h1>Welcome to my page!</h1>'
+
+
+@app.route('/<string:username>') 
+def user(username): 
+    return f'<h1>Profile for {username}</h1>' 
+
+if __name__ == '__main__':
+    app.run(port = 5554,debug=True)
